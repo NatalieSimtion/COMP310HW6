@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define N 8 //vertices
+#define N 8 //vertices T1, T2, T3, T4, T5, T6, T7, T8
 
 //data structure 4 graph
 
@@ -57,4 +57,22 @@ struct GraphStructure* createGraph(struct Edge edges[], int n)  {
 
 
 }
+
+//print list of graph
+
+void printGraph( struct GraphStructure* graph) {
+  for (int i =0; i < N; i++) {
+    //vertex &neighbors
+        struct Node* ptr = graph->head[i];
+  while (ptr != NULL) {
+    printf("(%d -> %d)\t",i, ptr->destination);
+    ptr = ptr->next;
+
+  }
+  printf("\n");
+
+  }
+}
+
+
 
